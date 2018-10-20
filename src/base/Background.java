@@ -1,24 +1,17 @@
 package base;
 
-import base.renderer.SingleImageRenderer;
-import tklibs.SpriteUtils;
-
-import java.awt.image.BufferedImage;
+import java.awt.*;
+import java.util.Set;
 
 public class Background extends GameObject {
-    public Background() {
-        BufferedImage image = SpriteUtils.loadImage("assets/images/background/0.png");
-        this.renderer = new SingleImageRenderer(image);
-        this.position = new Vector2D(0,
-                -(image.getHeight() - Settings.SCREEN_HEIGHT));
-    }
-
     @Override
-    public void run() {
-        if(this.position.y >= 0) {
-            return;
-        } else {
-            this.position.y += 10/*speed*/;
+    public void render(Graphics g) {
+        g.setColor(Color.CYAN);
+        for (int i = 0; i < Settings.COL_COUNT; i++) {
+            g.drawLine(i*Settings.WAY_SIZE,0,i*Settings.WAY_SIZE,Settings.SCREEN_HEIGHT);
+        }
+        for (int i = 0; i < Settings.ROW_COUNT; i++) {
+            g.drawLine(0,i*Settings.WAY_SIZE,Settings.SCREEN_WIDHT,i*Settings.WAY_SIZE);
         }
     }
 }
