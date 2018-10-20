@@ -26,7 +26,6 @@ public class SnakeHead extends SnakePart implements Physics {
         Wall wall = GameObject.intersect(Wall.class,this);
         if (wall!=null){
             this.destroy();
-            GameCanvas.player.destroy();
 
         }
     }
