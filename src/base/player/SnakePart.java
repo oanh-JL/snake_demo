@@ -28,6 +28,12 @@ public class SnakePart extends GameObject implements Physics {
         if (wall!=null){
             this.destroy();
         }
+
+        Player player=GameObject.intersect(Player.class,this);
+        if(player!=null){
+            player.destroy();
+        }
+
     }
 
     @Override

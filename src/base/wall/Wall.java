@@ -5,6 +5,7 @@ import base.Settings;
 import base.Vector2D;
 import base.physics.BoxCollider;
 import base.physics.Physics;
+import base.player.Player;
 import base.renderer.BoxColliderRenderer;
 
 import java.awt.*;
@@ -17,6 +18,8 @@ public class Wall extends GameObject implements Physics {
         this.renderer = new BoxColliderRenderer(Color.red,true);
         this.position = new Vector2D(170,400);
     }
+
+
     @Override
     public BoxCollider getBoxCollider() {
         return this.collider;

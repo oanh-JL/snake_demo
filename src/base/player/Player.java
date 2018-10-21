@@ -11,7 +11,7 @@ import game.GameCanvas;
 
 import java.util.ArrayList;
 
-public class Player extends GameObject{
+public class Player extends GameObject {
 
     SnakeHead head;
     ArrayList<SnakePart> parts;
@@ -44,22 +44,23 @@ public class Player extends GameObject{
 
     @Override
     public void run() {
+
         this.setDirection();
         if (this.moveCount.run()) {
             this.move();
             this.setPartsPosition();
             this.moveCount.reset();
         }
+ }
 
-    }
 
     private void setPartsPosition() {
         if (this.newPart != null) {
-            parts.add(1,GameObject.recycle(SnakePart.class));
-            parts.add(2,GameObject.recycle(SnakePart.class));
-            parts.add(3,GameObject.recycle(SnakePart.class));
-            parts.add(4,GameObject.recycle(SnakePart.class));
-            parts.add(5,GameObject.recycle(SnakePart.class));
+            parts.add(1, GameObject.recycle(SnakePart.class));
+            parts.add(2, GameObject.recycle(SnakePart.class));
+            parts.add(3, GameObject.recycle(SnakePart.class));
+            parts.add(4, GameObject.recycle(SnakePart.class));
+            parts.add(5, GameObject.recycle(SnakePart.class));
 
             this.newPart = null;
 
@@ -74,6 +75,7 @@ public class Player extends GameObject{
     }
 
     private void move() {
+
         switch (this.direction) {
             case Settings.UP: {
                 this.position.addThis(0, -Settings.WAY_SIZE);

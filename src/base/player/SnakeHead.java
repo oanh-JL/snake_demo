@@ -8,9 +8,11 @@ import base.wall.Wall;
 import game.GameCanvas;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class SnakeHead extends SnakePart implements Physics {
-    SnakePart part;
+    ArrayList<SnakePart> parts=new ArrayList<>();
+
     public SnakeHead(){
         super();
         this.renderer = new BoxColliderRenderer(Color.green,true);
@@ -28,5 +30,9 @@ public class SnakeHead extends SnakePart implements Physics {
             this.destroy();
 
         }
+
+
+
+
     }
 }
